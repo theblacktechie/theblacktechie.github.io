@@ -8,7 +8,6 @@ body {
     font-family: Space Mono, Roboto Mono, monospace;
     background-color: #fafafa;
 }
-#work{color:#4295ce;}
 #about:hover {
     color: #4295ce; /* Darker blue on hover */
 }
