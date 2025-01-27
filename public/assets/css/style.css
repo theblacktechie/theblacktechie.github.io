@@ -1,8 +1,9 @@
 /* Add this to your Tailwind CSS or a separate stylesheet */
 .logo {
-    background-image: url(/assets/TheBlackTechie.png); /* Update the path as needed */
-    background-repeat: no-repeat;
-    background-size: contain;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 50px;
+    text-align: center;
 }
 body {
     font-family: Space Mono, Roboto Mono, monospace;
