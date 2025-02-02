@@ -36,7 +36,7 @@ footerimg{
     font-family: Montserrat, sans-serif;
     font-size: 1.5rem;
     transition: background-color 0.2s ease-in-out;
-        background: linear-gradient(180deg, #4295ce 0, #4295ce);
+        background: linear-gradient(180deg, black 0, black);
         background-position: 0 100%;
         background-repeat: repeat-x;
         background-size: .12em .12em;
