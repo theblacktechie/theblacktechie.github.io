@@ -39,7 +39,7 @@ images:
     subtitle: "Matchup History: The Tale of Two Teams"
     link: "https://www.linkedin.com/posts/theblacktechie_sportsvizsunday-southcarolinawbb-uclawbb-activity-7266556079289913344-yV4J?utm_source=share&utm_medium=member_desktop"
 
-  - src: "assets/ACCvsACEShutdown.png"
+  - src: "assets/ACCvsACEShutdown.jpeg"
     title: "Personal Project"
     subtitle: "ACC vs. SEC Showdown"
     link: "https://x.com/theblacktechie/status/1859416310175637666/photo/1"
