@@ -1,0 +1,80 @@
+{{ define "main" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+</head>
+<body>
+   
+    <div class=" mx-auto w-full my-4 ">
+        <h1  class="styled-heading text-center font-bold text-lg lg:text-3xl mb-4">Blog</h1> <!-- Bold and Large Heading -->
+   
+          <img src="https://patdryburgh.github.io/hitchens/assets/images/divider.svg" alt="Divider" class="mx-auto mb-12">
+
+        <div class="pagination-container  mx-70">
+            {{ $blog := where .Site.RegularPages "Section" "blog" }}
+            {{ $paginator := .Paginate $blog }}
+            
+            {{ range $paginator.Pages }}
+       
+            <div class="post-item flex flex-col md:flex-row pb-8 mb-8 border-b">
+               
+                <!-- Thumbnail Image -->
+                {{ with .Params.img }}
+                <div class="w-full md:w-3/12 pr-4 mb-4 md:mb-0">
+                    <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-auto rounded-lg shadow">
+                </div>
+                {{ end }}
+
+                <!-- Blog Content -->
+                <div class="w-full md:w-9/12">
+                    <!-- Category & Subcategory -->
+                    <div class="text-sm uppercase tracking-wide text-gray-500 mb-1">
+                        {{ with .Params.category }}<span class="font-bold">{{ . }}</span>{{ end }}
+                        {{ with .Params.subcategory }} – <span class="font-bold">{{ . }}</span>{{ end }}
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">
+                        <a href="{{ .RelPermalink }}" class="text-black hover:underline">{{ .Title }}</a>
+                    </h3>
+
+                    <!-- Blog Title -->
+                   
+
+                    <!-- Short Excerpt -->
+                    <p class="text-gray-600 mb-2 ">
+                        {{ .Summary | truncate 120 }}
+                    </p>
+
+                    <!-- Read More Link -->
+                    <a href="{{ .RelPermalink }}" class="text-blue-600 font-medium hover:underline">Read More ›</a>
+                </div>
+            </div>
+            {{ end }}
+
+            <!-- Pagination Navigation -->
+            <div class="pagination-nav mt-10 flex justify-between items-center">
+                {{ if $paginator.HasPrev }}
+                <a href="{{ $paginator.Prev.URL }}" class="text-black font-medium ml-10">&lt; OLDER</a>
+                {{ end }}
+
+                <div class="text-center flex-grow">
+                    <span class="font-medium">{{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+                </div>
+
+                {{ if $paginator.HasNext }}
+                <a href="{{ $paginator.Next.URL }}" class="text-black font-medium mr-10">NEWER &gt;</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+{{ end }}

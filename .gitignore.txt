@@ -1,0 +1,29 @@
+# Hugo generated files
+/public/
+/resources/
+/hugo_stats.json
+
+# Local development files
+/node_modules/
+/.DS_Store
+/.idea/
+/.vscode/
+/Thumbs.db
+
+# Hugo cache and temporary files
+/.hugo_build.lock
+/.hugo_build.cache/
+/.cache/
+/tmp/
+
+# Netlify and Vercel deployments
+/.netlify/
+/.vercel/
+
+# Go dependencies (if using Hugo modules)
+/go.mod
+/go.sum
+/.hugo_build.lock
+
+# Logs and system files
+*.log
